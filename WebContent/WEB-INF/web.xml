@@ -19,12 +19,12 @@
   
    <servlet>
     <servlet-name>boardController</servlet-name>
-    <servlet-class>controller.BoardController</servlet-class>
-     <!-- <init-param>
+    <servlet-class>controller.BoardController2</servlet-class>
+    <!--  <init-param>
         <param-name>configFile</param-name>
       <param-value>/WEB-INF/commandBoard.properties</param-value>
-    </init-param> -->
-    <load-on-startup>1</load-on-startup>
+    </init-param>
+    <load-on-startup>1</load-on-startup> -->
   </servlet>
   <servlet-mapping>
     <servlet-name>boardController</servlet-name>

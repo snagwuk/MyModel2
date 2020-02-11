@@ -15,9 +15,11 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import dao.BoardDao;
 import model.BoardDataBean;
-import temp.ActionMethod;
+import temp.RequestMapping;
+import temp.ActionAnnotation;
+import temp.RequestMapping.RequestMethod;;
 
-public class BoardController extends ActionMethod
+public class BoardController2 extends ActionAnnotation
 {
     @Override
     public void initProcess(HttpServletRequest request,
@@ -48,7 +50,7 @@ public class BoardController extends ActionMethod
         }
         
     }
-    
+    @RequestMapping(value="list",method=RequestMethod.GET)
     public String board_list(HttpServletRequest request,
             HttpServletResponse res) throws Exception
     {
@@ -107,7 +109,7 @@ public class BoardController extends ActionMethod
         
         return "/view/board/list.jsp";
     }
-    
+    @RequestMapping(value="writeForm",method=RequestMethod.GET)
     public String board_writeForm(HttpServletRequest request,
             HttpServletResponse res) throws Exception
     {
@@ -130,7 +132,7 @@ public class BoardController extends ActionMethod
                 + "writeUploadForm.jsp";
         
     }
-    
+    @RequestMapping(value="content",method=RequestMethod.GET)
     public String board_content(HttpServletRequest request,
             HttpServletResponse response) throws Exception
     {
@@ -147,7 +149,7 @@ public class BoardController extends ActionMethod
         
         return "/view/board/content.jsp";
     }
-    
+    @RequestMapping(value="deleteForm",method=RequestMethod.GET)
     public String board_deleteForm(HttpServletRequest request,
             HttpServletResponse response) throws Exception
     {
@@ -156,7 +158,7 @@ public class BoardController extends ActionMethod
         
         return "/view/board/deleteForm.jsp";
     }
-    
+    @RequestMapping(value="deletePro",method=RequestMethod.POST)
     public String board_deletePro(HttpServletRequest request,
             HttpServletResponse response) throws Exception
     {
@@ -171,7 +173,7 @@ public class BoardController extends ActionMethod
         
         return "/view/board/updatePro.jsp";
     }
-    
+    @RequestMapping(value="updateForm",method=RequestMethod.GET)
     public String board_updateForm(HttpServletRequest request,
             HttpServletResponse response) throws Exception
     {
@@ -186,7 +188,7 @@ public class BoardController extends ActionMethod
         
         return "/view/board/updateForm.jsp";
     }
-    
+    @RequestMapping(value="updatePro",method=RequestMethod.POST)
     public String board_updatePro(HttpServletRequest request,
             HttpServletResponse response) throws Exception
     {
@@ -207,7 +209,7 @@ public class BoardController extends ActionMethod
         
         return "/view/board/updatePro.jsp";
     }
-    
+    @RequestMapping(value="writePro",method=RequestMethod.POST)
     public String board_writePro(HttpServletRequest request,
             HttpServletResponse response) throws Exception
     {
